@@ -1,0 +1,248 @@
+/* ---------------------------------------------------- */
+/* PALETA DE COLORES Y TIPOGRAFÍA */
+/* ---------------------------------------------------- */
+:root {
+    --color-dora-pink: #FF6F91; /*accent fondos hovers*/
+    --color-dora-blue: #008F95; /*elementos interactivos bordes*/
+    --color-dora-orange: #FFC75F; /*titulares, text-shadow */
+    --color-dora-dark: #1F2937; /*texto fondos oscuros*/
+    --color-dora-light: #fce7cb; /*background, areas blancas*/
+    --color-dora-blue-light: #4ecdc4;
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --gradient-dora: radial-gradient(circle at center,  
+        var(--color-dora-blue) 0%,           
+        var(--color-dora-blue-light) 50%,
+        var(--color-dora-light) 100%);       
+    --gradient-accent: radial-gradient(circle at center, 
+        var(--color-dora-blue-light)0%, 
+        var(--color-dora-light)50%,
+        var(--color-dora-orange)100%);
+    --font-heading: 'Fredoka', cursive;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* ---------------------------------------------------- */
+/*BASE Y RESET*/
+/* ---------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:  var(--font-body);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    padding: 1rem;
+    min-height: 100vh;
+    background: var(--gradient-dora);
+    color: var(--color-dora-dark);
+}
+
+/* ---------------------------------------------------- */
+/* MAIN SECTION AND TEXT*/
+/* ---------------------------------------------------- */
+
+
+#main {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--color-dora-light);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--color-shadow);
+    border: 6px solid var(--color-dora-blue);
+}
+
+#title {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    line-height: 85%;
+    font-weight: 600;
+    text-align: center;
+    font-size: clamp(2rem, 8vw, 7rem);
+    overflow-wrap:break-word;
+    color:var(--color-dora-orange);
+    text-shadow: 4px 4px 0 var(--color-dora-pink);
+    animation: pulse-shadow 4s ease-in-out infinite;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+#main > p {
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--color-dora-dark);
+    background: var(--color-dora-orange);
+    border-radius: 10px;
+    border: 5px solid var(--color-dora-blue);
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+h3 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: clamp(1.5rem, 4vw, 4rem);
+    text-align: center;
+    color: var(--color-dora-pink); 
+    margin: 2rem 0 1rem 0;
+}
+
+/* ---------------------------------------------------- */
+/* IMAGE SECTION*/
+/* ---------------------------------------------------- */
+#img-div {
+    padding: 1.5rem;
+    margin: 2rem 0;
+    background: var(--color-dora-orange);
+    border-radius: 15px;
+    border: 8px solid var(--color-dora-blue);
+    text-align: center;
+    box-shadow: 0 5px 15px var(--color-shadow); 
+}
+
+#image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+#img-caption {
+    font-style: italic;
+    font-size: clamp(0.8rem, 2.0vw, 1rem);
+    overflow-wrap:break-word;
+    text-align: center;
+    color: var(--color-dora-dark);
+    background: var(--color-dora-light);
+    border-radius: 10px;
+    border: 3px solid var(--color-dora-pink);
+    padding: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* ---------------------------------------------------- */
+/* TRIBUTE INFO */
+/* ---------------------------------------------------- */
+
+#tribute-info {
+    background: var(--color-dora-orange);
+    border-radius: 15px;
+    border: 8px solid var(--color-dora-pink);
+    box-shadow: 0 3px 10px var(--color-shadow); 
+    margin: 2rem 0;
+    padding: 2rem;
+
+}
+
+#tribute-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#tribute-info li {
+    border: 3px solid var(--color-dora-pink);
+    background: var(--color-dora-light);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+#tribute-info li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px var(--color-shadow); 
+}
+
+#tribute-info strong {
+    color: var(--color-dora-blue);
+    font-weight: 700;
+}
+
+/* ---------------------------------------------------- */
+/* ACHIEVEMENTS SECTION*/
+/* ---------------------------------------------------- */
+  
+#tribute-achievements {
+    padding: 1.5rem;
+    margin: 2rem 0;
+    background: var(--color-dora-orange);
+    border-radius: 15px;
+    border: 8px solid var(--color-dora-blue);
+    text-align: center;
+    box-shadow: 0 5px 15px var(--color-shadow); 
+}
+
+
+#tribute-achievements ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+}
+
+#tribute-achievements li {
+    background: var(--gradient-accent);
+    color: var(--color-dora-dark);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 3px solid var(--color-dora-pink);
+    text-align: center;
+    font-weight: 600;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+
+}
+
+#tribute-achievements li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px var(--color-shadow); 
+}
+/* ---------------------------------------------------- */
+/* LINK SECTION*/
+/* ---------------------------------------------------- */
+
+#tribute-link {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-variant-caps: all-small-caps;
+    color: var(--color-dora-dark);
+    text-decoration: none;
+    background: var(--color-dora-orange);
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px var(--color-shadow);
+}
+
+#tribute-link:hover {
+    background: var(--color-dora-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 var(--color-shadow);
+}
+
+
+/* ---------------------------------------------------- */
+/* ANIMATIONS */
+/* ---------------------------------------------------- */
+@keyframes pulse-shadow {
+    0% { 
+        text-shadow: 4px 4px 0 var(--color-dora-pink); 
+    }
+    50% { 
+        text-shadow: 8px 8px 10px var(--color-dora-pink); 
+    }
+    100% { 
+        text-shadow: 4px 4px 0 var(--color-dora-pink); 
+    }
+}
