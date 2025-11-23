@@ -1,248 +1,313 @@
 /* ---------------------------------------------------- */
 /* PALETA DE COLORES Y TIPOGRAFÍA */
 /* ---------------------------------------------------- */
-:root {
-    --color-dora-pink: #FF6F91; /*accent fondos hovers*/
-    --color-dora-blue: #008F95; /*elementos interactivos bordes*/
-    --color-dora-orange: #FFC75F; /*titulares, text-shadow */
-    --color-dora-dark: #1F2937; /*texto fondos oscuros*/
-    --color-dora-light: #fce7cb; /*background, areas blancas*/
+    /*Set up variables in :root for colors, fonts, and spacing. */
+
+
+       :root {
+    --color-dora-pink: #d177a1; 
+    --color-dora-green: #92beaa; 
+    --color-dora-orange: #FFC75F;
+    --color-dora-peach: #ffb5a7;
+    --color-dora-dark: #1F2937;
+    --color-dora-light: #fce7cb; 
     --color-dora-blue-light: #4ecdc4;
-    --color-shadow: rgba(0, 0, 0, 0.2);
-    --gradient-dora: radial-gradient(circle at center,  
-        var(--color-dora-blue) 0%,           
-        var(--color-dora-blue-light) 50%,
-        var(--color-dora-light) 100%);       
-    --gradient-accent: radial-gradient(circle at center, 
-        var(--color-dora-blue-light)0%, 
-        var(--color-dora-light)50%,
-        var(--color-dora-orange)100%);
+    --color-dora-strong: #008F95;
+
+    --color-shadow-light: rgba(31, 41, 55, 0.1);
+    --color-shadow-medium: rgba(31, 41, 55, 0.15);
+    --color-shadow-strong: rgba(31, 41, 55, 0.25);
+
+    --gradient-top: linear-gradient(to bottom,  
+        var(--color-dora-green) 0%,           
+        var(--color-dora-light) 50%,
+        var(--color-dora-peach) 100%);
+    
+    --gradient-bottom: linear-gradient(to top,  
+        var(--color-dora-green) 0%,           
+        var(--color-dora-light) 50%,
+        var(--color-dora-peach) 100%);
+    
+    --gradient-accent: linear-gradient(135deg, 
+        var(--color-dora-blue-light) 0%, 
+        var(--color-dora-light) 100%);
+
+    --gradient-accent-hover: linear-gradient(135deg,
+        var(--color-dora-green) 0%, 
+        var(--color-dora-orange) 100%);
+
     --font-heading: 'Fredoka', cursive;
     --font-body: 'Poppins', sans-serif;
+    --font-accent: 'Fascinate', cursive;
 }
+/* ---------------------------------------------------- */
+/* BASE Y RESET*/
+/* ---------------------------------------------------- */
 
-/* ---------------------------------------------------- */
-/*BASE Y RESET*/
-/* ---------------------------------------------------- */
+/* Reset browser defaults
+Use * to remove default spacing and include padding/border in width*/
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
 }
+
+
+/* ---------------------------------------------------- */
+/* BODY AND MAIN LAYOUT*/
+/* ---------------------------------------------------- */
+/*
+Define base typography and reset margins and paddings
+- Set font-family, font-size 16px (base unit), line-height 1.5-1.8, color.
+- Define max-width (typically 800-1200px)
+- Consider adding min-height: 100vh to fill viewport
+- Set background-color or background with gradient for full page color.
+- Target h1, h2, h3 elements. (h1: 2.5-3rem, h2: 2rem, h3: 1.5rem)
+- Add margin-bottom (1-2rem) for spacing below headings
+- Center with margin: 0 auto.
+- Add padding 2rem (or 1.5-3rem) for breathing room on all sides.
+- Choose ONE spacing unit system and use consistently for ALL margins and padding
+*/
 
 body {
-    font-family:  var(--font-body);
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-    padding: 1rem;
-    min-height: 100vh;
-    background: var(--gradient-dora);
-    color: var(--color-dora-dark);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    margin: 0 auto;
+    background-color: var(--color-dora-peach);
+    max-width: 100vw;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
-/* ---------------------------------------------------- */
-/* MAIN SECTION AND TEXT*/
-/* ---------------------------------------------------- */
 
-
-#main {
+main {
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
-    padding: 2rem;
-    background: var(--color-dora-light);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px var(--color-shadow);
-    border: 6px solid var(--color-dora-blue);
-}
-
-#title {
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-    line-height: 85%;
-    font-weight: 600;
-    text-align: center;
-    font-size: clamp(2rem, 8vw, 7rem);
-    overflow-wrap:break-word;
-    color:var(--color-dora-orange);
-    text-shadow: 4px 4px 0 var(--color-dora-pink);
-    animation: pulse-shadow 4s ease-in-out infinite;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-}
-
-#main > p {
-    font-weight: 500;
-    font-size: 1rem;
-    text-align: center;
-    color: var(--color-dora-dark);
-    background: var(--color-dora-orange);
-    border-radius: 10px;
-    border: 5px solid var(--color-dora-blue);
-    margin-bottom: 2rem;
-    padding: 1rem;
 }
 
 h3 {
-    font-family: var(--font-heading);
+    font-family: var(--font-accent); 
     text-transform: uppercase;
-    font-size: clamp(1.5rem, 4vw, 4rem);
+    font-size: clamp(1.5rem, 4vw, 2rem);;
     text-align: center;
-    color: var(--color-dora-pink); 
-    margin: 2rem 0 1rem 0;
+    color: var(--color-dora-pink);
+    margin-bottom: 1rem;
+}
+
+
+/* ---------------------------------------------------- */
+/* HEADER SECTION*/
+/* ---------------------------------------------------- */
+/*
+- Set text-align: center to center all content
+- Add margin-bottom: 3rem for spacing below the entire header
+- Set H1 font and font-size: 2.5-3rem (larger for impact)
+- Set color using variable */
+
+
+header {
+    text-align:center;
+    background: var(--gradient-top);
+    margin-bottom: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 8vw, 4rem);
+    line-height: 1.2;
+    color: var(--color-dora-pink);
+    animation: pulse-shadow 3s ease-in-out infinite;
+}
+
+
+
+
+header p {
+    font-size: clamp(1rem, 3vw, 1.5rem); 
+    font-weight: 500;
+    line-height: 1.2;
+    font-family: var(--font-heading);
+    text-align:center;
+    color: var(--color-dora-pink);
+    padding-left: 15%;
+    padding-right: 15%;
+
 }
 
 /* ---------------------------------------------------- */
-/* IMAGE SECTION*/
+/* INTRO SECTION*/
 /* ---------------------------------------------------- */
-#img-div {
-    padding: 1.5rem;
-    margin: 2rem 0;
-    background: var(--color-dora-orange);
+
+#intro-section {
+    display:block;
+    background-color: var(--color-dora-orange);
+    text-align: center;
     border-radius: 15px;
-    border: 8px solid var(--color-dora-blue);
-    text-align: center;
-    box-shadow: 0 5px 15px var(--color-shadow); 
+    border: 8px solid var(--color-dora-green);
+    box-shadow: 0 4px 12px var(--color-shadow-medium);
+    margin-bottom: 3rem;
+    padding: 5%;
 }
 
-#image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
+#image  {
+max-width: 100%;
+height: auto;
+margin: 0 auto;
+border-radius: 10px;
+/*
+IMAGE STYLING 
+- Set max-width: 100% (image scales DOWN but never exceeds original size)
+- Set height: auto (maintains aspect ratio)
+- Use margin: 0 auto to CENTER the image horizontally*/
+
 }
+
 
 #img-caption {
-    font-style: italic;
-    font-size: clamp(0.8rem, 2.0vw, 1rem);
-    overflow-wrap:break-word;
+    font-size: 0.9rem;
+    font-style:italic;
+    font-weight: 600;
     text-align: center;
-    color: var(--color-dora-dark);
     background: var(--color-dora-light);
     border-radius: 10px;
     border: 3px solid var(--color-dora-pink);
+    margin-top: 1.5rem;  
     padding: 0.9rem;
-    margin-top: 1rem;
-}
-
-/* ---------------------------------------------------- */
-/* TRIBUTE INFO */
-/* ---------------------------------------------------- */
-
-#tribute-info {
-    background: var(--color-dora-orange);
-    border-radius: 15px;
-    border: 8px solid var(--color-dora-pink);
-    box-shadow: 0 3px 10px var(--color-shadow); 
-    margin: 2rem 0;
-    padding: 2rem;
 
 }
 
-#tribute-info ul {
+
+/* ---------------------------------------------------- */
+/* INFO SECTION*/
+/* ---------------------------------------------------- */
+
+#info-section {
+display:block;
+padding: 2rem;
+background-color: var(--color-dora-orange);
+border-radius: 15px;
+border: 8px solid var(--color-dora-pink);
+box-shadow: 0 4px 12px var(--color-shadow-medium);
+margin: 2rem 0;
+
+
+}
+
+ul {
     list-style-type: none;
     padding: 0;
 }
 
-#tribute-info li {
+#info-section li {
     border: 3px solid var(--color-dora-pink);
-    background: var(--color-dora-light);
+    background-color: var(--color-dora-light);
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     margin: 1rem 0;
     padding: 1rem;
     border-radius: 10px;
 }
 
-#tribute-info li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px var(--color-shadow); 
+#info-section li:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 12px 24px var(--color-shadow-strong);
 }
 
-#tribute-info strong {
-    color: var(--color-dora-blue);
-    font-weight: 700;
-}
+
+#info-section strong {
+   color: var(--color-dora-strong);
+   font-weight: 700;
+} 
 
 /* ---------------------------------------------------- */
 /* ACHIEVEMENTS SECTION*/
 /* ---------------------------------------------------- */
-  
-#tribute-achievements {
-    padding: 1.5rem;
-    margin: 2rem 0;
-    background: var(--color-dora-orange);
+
+
+#achievements-section {
+    display:block;
+    padding: 2rem;
+    background-color: var(--color-dora-orange);
+    text-align: center;
     border-radius: 15px;
-    border: 8px solid var(--color-dora-blue);
-    text-align: center;
-    box-shadow: 0 5px 15px var(--color-shadow); 
+    border: 8px solid var(--color-dora-pink);
+    box-shadow: 0 4px 12px var(--color-shadow-medium);
+    margin: 2rem 0;
+
 }
 
-
-#tribute-achievements ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    list-style-type: none;
-    padding: 0;
+#achievements-section ul {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+   gap: 1rem;
+   list-style-type: none;
+   padding: 0;
 }
 
-#tribute-achievements li {
-    background: var(--gradient-accent);
-    color: var(--color-dora-dark);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: 3px solid var(--color-dora-pink);
-    text-align: center;
+#achievements-section li {
+    display:block;
     font-weight: 600;
+    text-align: center;
+    background: var(--gradient-accent);
+    border: 3px solid var(--color-dora-pink);
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 10px;
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 
 }
 
-#tribute-achievements li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px var(--color-shadow); 
+
+#achievements-section li:hover {
+   transform: translateY(-5px) scale(1.02);
+   box-shadow: 0 10px 20px var(--color-shadow-strong);
+   background: var(--gradient-accent-hover);
 }
+
 /* ---------------------------------------------------- */
 /* LINK SECTION*/
 /* ---------------------------------------------------- */
 
-#tribute-link {
-    display: block;
-    width: fit-content;
-    margin: 2rem auto;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-    font-variant-caps: all-small-caps;
-    color: var(--color-dora-dark);
-    text-decoration: none;
-    background: var(--color-dora-orange);
-    border-radius: 50px;
-    padding: 1rem 2rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px var(--color-shadow);
+
+#link-section {
+    text-align:center;
+    background: var(--gradient-bottom);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    width:100%;
 }
 
-#tribute-link:hover {
-    background: var(--color-dora-pink);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 0 var(--color-shadow);
+#link  {
+   display: block;
+   width: fit-content;
+   margin: 2rem auto;
+   text-align: center;
+   font-size: 1.2rem;
+   font-weight: 700;
+   font-variant-caps: all-small-caps;
+   color: var(--color-dora-dark);
+   text-decoration: none;
+   background: var(--color-dora-orange);
+   border-radius: 50px;
+   padding: 1rem 2rem;
+   transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--color-shadow-light);
 }
 
+#link:hover {
+   background: var(--color-dora-pink);
+   transform: translateY(-3px);
+   box-shadow: 0 8px 16px var(--color-shadow-strong);
+}
 
 /* ---------------------------------------------------- */
-/* ANIMATIONS */
+/* ANIMATIONS AND EFFECTS */
 /* ---------------------------------------------------- */
 @keyframes pulse-shadow {
-    0% { 
-        text-shadow: 4px 4px 0 var(--color-dora-pink); 
-    }
-    50% { 
-        text-shadow: 8px 8px 10px var(--color-dora-pink); 
-    }
-    100% { 
-        text-shadow: 4px 4px 0 var(--color-dora-pink); 
-    }
+    0% { text-shadow: 4px 4px 0 var(--color-dora-light); }
+    50% { text-shadow: 8px 8px 10px var(--color-dora-light); }
+    100% { text-shadow: 4px 4px 0 var(--color-dora-light); }
 }
