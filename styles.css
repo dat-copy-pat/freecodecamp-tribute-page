@@ -3,7 +3,6 @@
 /* ---------------------------------------------------- */
     /*Set up variables in :root for colors, fonts, and spacing. */
 
-
        :root {
     --color-dora-pink: #d177a1; 
     --color-dora-green: #92beaa; 
@@ -49,8 +48,6 @@ Use * to remove default spacing and include padding/border in width*/
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     
 }
 
@@ -72,28 +69,29 @@ Define base typography and reset margins and paddings
 */
 
 body {
-    font-family: var(--font-body);
-    line-height: 1.5;
     margin: 0 auto;
-    background-color: var(--color-dora-peach);
     max-width: 100vw;
+    font-family: var(--font-body);
     font-size: clamp(0.9rem, 1.5vw, 1rem);
+    line-height: 1.5;
+    background-color: var(--color-dora-peach);
 }
 
 
 main {
     max-width: 1200px;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 }
 
 h3 {
-    font-family: var(--font-accent); 
+    margin-bottom: 1rem;
+    font-family: var(--font-heading); 
     text-transform: uppercase;
-    font-size: clamp(1.5rem, 4vw, 2rem);;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 3rem);;
     text-align: center;
     color: var(--color-dora-pink);
-    margin-bottom: 1rem;
 }
 
 
@@ -108,14 +106,16 @@ h3 {
 
 
 header {
+    margin-bottom: 2rem;
+    padding: 3rem 1.3rem 1rem 1.3rem;
     text-align:center;
     background: var(--gradient-top);
-    margin-bottom: 3rem;
-    padding-top: 4rem;
-    padding-bottom: 5rem;
+
 }
 
-h1 {
+#title {
+    padding-right:1.2rem;
+    padding-left: 1.2rem;
     font-family: var(--font-heading);
     font-size: clamp(2rem, 8vw, 4rem);
     line-height: 1.2;
@@ -123,20 +123,20 @@ h1 {
     animation: pulse-shadow 3s ease-in-out infinite;
 }
 
-
-
-
 header p {
+    max-width: 600px; 
+    margin-left: auto;
+    margin-right: auto;
+    padding-right:1rem;
+    padding-left: 1rem;
     font-size: clamp(1rem, 3vw, 1.5rem); 
     font-weight: 500;
     line-height: 1.2;
     font-family: var(--font-heading);
     text-align:center;
     color: var(--color-dora-pink);
-    padding-left: 15%;
-    padding-right: 15%;
-
 }
+
 
 /* ---------------------------------------------------- */
 /* INTRO SECTION*/
@@ -144,30 +144,35 @@ header p {
 
 #intro-section {
     display:block;
-    background-color: var(--color-dora-orange);
+    margin-bottom: 3rem;
+    padding: 5%;
     text-align: center;
+    background-color: var(--color-dora-orange);
     border-radius: 15px;
     border: 8px solid var(--color-dora-green);
     box-shadow: 0 4px 12px var(--color-shadow-medium);
-    margin-bottom: 3rem;
-    padding: 5%;
+
 }
 
-#image  {
-max-width: 100%;
-height: auto;
-margin: 0 auto;
-border-radius: 10px;
 /*
 IMAGE STYLING 
 - Set max-width: 100% (image scales DOWN but never exceeds original size)
 - Set height: auto (maintains aspect ratio)
 - Use margin: 0 auto to CENTER the image horizontally*/
 
+#image  {
+max-width: 100%;
+height: auto;
+margin: 0 auto;
+border-radius: 10px;
+object-fit: cover;
 }
 
 
+
 #img-caption {
+    margin-top: 1.5rem;  
+    padding: 0.9rem;
     font-size: 0.9rem;
     font-style:italic;
     font-weight: 600;
@@ -175,26 +180,22 @@ IMAGE STYLING
     background: var(--color-dora-light);
     border-radius: 10px;
     border: 3px solid var(--color-dora-pink);
-    margin-top: 1.5rem;  
-    padding: 0.9rem;
+
 
 }
-
 
 /* ---------------------------------------------------- */
 /* INFO SECTION*/
 /* ---------------------------------------------------- */
 
 #info-section {
-display:block;
-padding: 2rem;
-background-color: var(--color-dora-orange);
-border-radius: 15px;
-border: 8px solid var(--color-dora-pink);
-box-shadow: 0 4px 12px var(--color-shadow-medium);
-margin: 2rem 0;
-
-
+    margin: 2rem 0;
+    display:block;
+    padding: 2rem;
+    background-color: var(--color-dora-orange);
+    border-radius: 15px;
+    border: 8px solid var(--color-dora-pink);
+    box-shadow: 0 4px 12px var(--color-shadow-medium);
 }
 
 ul {
@@ -203,19 +204,21 @@ ul {
 }
 
 #info-section li {
-    border: 3px solid var(--color-dora-pink);
-    background-color: var(--color-dora-light);
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     margin: 1rem 0;
     padding: 1rem;
+    border: 3px solid var(--color-dora-pink);
+    background-color: var(--color-dora-light);
     border-radius: 10px;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+
 }
 
 #info-section li:hover {
-   transform: translateY(-10px);
-   box-shadow: 0 12px 24px var(--color-shadow-strong);
-}
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px var(--color-shadow-strong);
+    background: var(--gradient-accent-hover);
 
+}
 
 #info-section strong {
    color: var(--color-dora-strong);
@@ -229,13 +232,14 @@ ul {
 
 #achievements-section {
     display:block;
+    margin: 2rem 0;
     padding: 2rem;
     background-color: var(--color-dora-orange);
     text-align: center;
     border-radius: 15px;
     border: 8px solid var(--color-dora-pink);
     box-shadow: 0 4px 12px var(--color-shadow-medium);
-    margin: 2rem 0;
+
 
 }
 
@@ -245,16 +249,17 @@ ul {
    gap: 1rem;
    list-style-type: none;
    padding: 0;
+
 }
 
 #achievements-section li {
     display:block;
+    margin: 1rem 0;
+    padding: 1rem;
     font-weight: 600;
     text-align: center;
     background: var(--gradient-accent);
     border: 3px solid var(--color-dora-pink);
-    margin: 1rem 0;
-    padding: 1rem;
     border-radius: 10px;
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 
@@ -274,16 +279,18 @@ ul {
 
 #link-section {
     text-align:center;
-    background: var(--gradient-bottom);
     padding-top: 3rem;
     padding-bottom: 3rem;
     width:100%;
+    background: var(--gradient-bottom);
+
 }
 
 #link  {
    display: block;
    width: fit-content;
    margin: 2rem auto;
+   padding: 1rem 2rem;
    text-align: center;
    font-size: 1.2rem;
    font-weight: 700;
@@ -292,10 +299,10 @@ ul {
    text-decoration: none;
    background: var(--color-dora-orange);
    border-radius: 50px;
-   padding: 1rem 2rem;
    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px var(--color-shadow-light);
+   box-shadow: 0 2px 8px var(--color-shadow-light);
 }
+
 
 #link:hover {
    background: var(--color-dora-pink);
@@ -307,7 +314,16 @@ ul {
 /* ANIMATIONS AND EFFECTS */
 /* ---------------------------------------------------- */
 @keyframes pulse-shadow {
-    0% { text-shadow: 4px 4px 0 var(--color-dora-light); }
-    50% { text-shadow: 8px 8px 10px var(--color-dora-light); }
-    100% { text-shadow: 4px 4px 0 var(--color-dora-light); }
+    0% { text-shadow: 4px 4px 0 
+        var(--color-dora-light); }
+    50% { text-shadow: 8px 8px 10px 
+        var(--color-dora-light); }
+    100% { text-shadow: 4px 4px 0 
+        var(--color-dora-light); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #title {
+    animation: none;
+  }
 }
